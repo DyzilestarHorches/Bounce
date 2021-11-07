@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
+    public SO_BallData ballData;
     Rigidbody2D rigid;
 
-    float speed = 10f;
-
+ 
     // Start is called before the first frame update
     void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
+        
         Time.timeScale = 2;
     }
 
@@ -29,7 +30,7 @@ public class Ball : MonoBehaviour
             movement.x = -1;
         if (Input.GetKey(KeyCode.D))
             movement.x = 1;
-        rigid.velocity = movement * speed;
+        rigid.velocity = movement * ballData.speed;
     }
 
     private void Jump()
@@ -47,7 +48,7 @@ public class Ball : MonoBehaviour
         while (time < 1)
         {
             time += Time.deltaTime;
-            rigid.velocity += Vector2.up * 25;
+            rigid.velocity += Vector2.up * ballData.jumpRange;
             yield return null;
         }
     }
