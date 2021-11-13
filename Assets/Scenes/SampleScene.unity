@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c01cbb49524d96e468b13bfbecd3fb89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ballData: {fileID: 11400000, guid: 32ad2480a36e6c040b0fec2d5a405d73, type: 2}
 --- !u!4 &12597535
 Transform:
   m_ObjectHideFlags: 0
