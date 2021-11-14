@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "new GameManagerData", menuName = "GameManagerData", order = 53)]
 public class SO_GameManagerData : ScriptableObject
 {
-    SO_MyState gameState;
+    public SO_MyState gameState;
 
-    Vector2 gameMove;
-    float gameSpeed;
+    public Vector2 gameMove;
+    public float gameSpeed;
 
-    int score;
+    public int score;
 }
