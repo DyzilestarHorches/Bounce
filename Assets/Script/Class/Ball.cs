@@ -7,7 +7,10 @@ public class Ball : MonoBehaviour
     public SO_BallData ballData;
     Rigidbody2D rigid;
 
- 
+    [SerializeField]
+    private float jumpForce = 11f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +40,8 @@ public class Ball : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Jumping());
-        }
-    }
-
-    IEnumerator Jumping()
-    {
-        Debug.Log("It's here!");
-        float time = 0f;
-        while (time < 1)
-        {
-            time += Time.deltaTime;
-            rigid.velocity += Vector2.up * ballData.jumpRange;
-            yield return null;
+            rigid.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+            Debug.Log("Jump");
         }
     }
 }
