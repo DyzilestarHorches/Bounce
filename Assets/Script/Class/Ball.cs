@@ -23,7 +23,7 @@ public class Ball : MonoBehaviour
     void Update()
     {
         Move2();
-        Jump();
+        //Jump();
     }
 
     private void Move2()
@@ -36,7 +36,7 @@ public class Ball : MonoBehaviour
         rigid.velocity = movement * ballData.speed;
     }
 
-    private void Jump()
+    /*private void Jump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -44,4 +44,5 @@ public class Ball : MonoBehaviour
             Debug.Log("Jump");
         }
     }
+    */
 }
