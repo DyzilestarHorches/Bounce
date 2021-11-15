@@ -15,6 +15,8 @@ public class Platform : MonoBehaviour
     [SerializeField]
     private float spawn = 40f;
 
+    public bool unpredictableExist = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +28,7 @@ public class Platform : MonoBehaviour
     {
         MovePlatform();
         ChangePosition();
-        UnpredictedMovement();
+        UnpredictableMovement();
     }
 
     void ChangePosition()
@@ -34,21 +36,55 @@ public class Platform : MonoBehaviour
         if (transform.position.y < despawn)
         {
             transform.position = new Vector3(Random.Range(-35f, 35f), spawn, 0f);
+            UnpredictableExist();
         }
     }
 
     void MovePlatform()
     {
             transform.position -= new Vector3(0f, moveSpeed, 0f) * Time.deltaTime;
+    }    
+    
+    void UnpredictableMovement()
+    {
+        if (transform.position.y < 25 && unpredictableExist)
+        {
+            StartCoroutine(UnpredictableMoving());
+            unpredictableExist = false;
+        }
     }
 
-    IEnumerator UnpredictedMovement()
+    IEnumerator UnpredictableMoving()
     {
-        float delay = Random.Range(0f, 2f);
-
-        for ()
-        private int direction = Random.Range(0, 1);
+        int delay = Random.Range(4, 7);
+        yield return new WaitForSecondsRealtime(delay);
         
-    yeild return null;
+        Vector3 direction = new Vector3(Random.Range(2f, 4f), 0f, 0f);
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction;
+        
+        float speed = Random.Range(0.5f, 1f);
+        float time = 0f;
+
+        while(transform.position != targetPosition)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, (time / Vector3.Distance(startPosition, targetPosition)) * speed);
+            time += Time.deltaTime;
+        }
+        yield return null;
+    }
+
+    void UnpredictableExist()
+    {
+        float count = Random.Range(0f, 10f);
+        Debug.Log("count" + count);
+        if (count > 5f)
+        {
+            unpredictableExist = true;
+        } 
+        else
+        {
+            unpredictableExist = false;
+        }
     }
 }
