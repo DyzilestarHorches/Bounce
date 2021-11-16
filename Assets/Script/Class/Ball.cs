@@ -7,7 +7,13 @@ public class Ball : MonoBehaviour
     public SO_BallData ballData;
     Rigidbody2D rigid;
 
- 
+
+    float speed = 10f;
+    [SerializeField]public float jumpHeight;
+
+    bool grounded;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,19 +43,19 @@ public class Ball : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(Jumping());
+            if (grounded)
+            {
+                grounded = false;
+                rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
+            }
         }
     }
 
-    IEnumerator Jumping()
+    private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("It's here!");
-        float time = 0f;
-        while (time < 1)
+        if(other.gameObject.tag == "ground")
         {
-            time += Time.deltaTime;
-            rigid.velocity += Vector2.up * ballData.jumpRange;
-            yield return null;
+            grounded = true;
         }
     }
 }

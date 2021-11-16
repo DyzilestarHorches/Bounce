@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 441624154}
   m_Layer: 0
   m_Name: platform_0_1
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -585,7 +585,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6be5951517fb9244d966f7e3eb90d068, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballData: {fileID: 11400000, guid: 32ad2480a36e6c040b0fec2d5a405d73, type: 2}
+
+
+  jumpHeight: 0
+
 --- !u!58 &553330634
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -729,7 +732,7 @@ GameObject:
   - component: {fileID: 1640001701}
   m_Layer: 0
   m_Name: platform_0_2
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -933,7 +936,7 @@ GameObject:
   - component: {fileID: 1834941729}
   m_Layer: 0
   m_Name: platform_0_0
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
