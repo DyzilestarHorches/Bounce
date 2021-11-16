@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManage : MonoBehaviour
 {
+    [SerializeField] private SO_GameManagerData gameManagerData;
     public SO_BallData ballData;
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.I))
