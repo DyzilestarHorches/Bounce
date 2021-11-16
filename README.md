@@ -1,2 +1,2 @@
 # Bounce
-Commercial
+Enjoy our first hyper-casual game!!!
