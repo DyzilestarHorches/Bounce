@@ -5,6 +5,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public SO_BallData ballData;
+
     Rigidbody2D rigid;
 
 
@@ -18,7 +19,7 @@ public class Ball : MonoBehaviour
     void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
-        
+
         Time.timeScale = 2;
     }
 
@@ -31,7 +32,7 @@ public class Ball : MonoBehaviour
 
     private void Move2()
     {
-        Vector2 movement = new Vector2(0,0);
+        Vector2 movement = new Vector2(0, 0);
         if (Input.GetKey(KeyCode.A))
             movement.x = -1;
         if (Input.GetKey(KeyCode.D))
