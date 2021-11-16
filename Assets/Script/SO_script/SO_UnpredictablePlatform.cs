@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "new UnpredictablePlatformData", menuName = "UnpredictablePlatformData", order = 53)]
+[CreateAssetMenu(fileName = "new UnpredictablePlatformData", menuName = "UnpredictablePlatformData", order = 55)]
 public class SO_UnpredictablePlatformData : SO_PlatformData
 {
     public Vector2 direction;
