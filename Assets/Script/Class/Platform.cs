@@ -7,13 +7,13 @@ public class Platform : MonoBehaviour
     public SO_PlatformData size;
 
     [SerializeField]
-    private float moveSpeed = 2f;
+    private float moveSpeed = 10f;
 
     [SerializeField]
-    private float despawn = -30f;
+    private float despawn = -50f;
 
     [SerializeField]
-    private float spawn = 40f;
+    private float spawn = 76f;
 
     public bool unpredictableExist = false;
 
@@ -77,7 +77,7 @@ public class Platform : MonoBehaviour
     void UnpredictableExist()
     {
         float count = Random.Range(0f, 10f);
-        Debug.Log("count" + count);
+        //Debug.Log("count" + count);
         if (count > 5f)
         {
             unpredictableExist = true;
@@ -86,5 +86,11 @@ public class Platform : MonoBehaviour
         {
             unpredictableExist = false;
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(new Vector2(-100, despawn), new Vector2(100, despawn));
+        Gizmos.DrawLine(new Vector2(-100, spawn), new Vector2(100, spawn));
     }
 }

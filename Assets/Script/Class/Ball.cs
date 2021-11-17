@@ -9,8 +9,8 @@ public class Ball : MonoBehaviour
     Rigidbody2D rigid;
 
 
-    float speed = 10f;
-    [SerializeField]public float jumpHeight;
+    float speed = 30f;
+    [SerializeField] private float jumpHeight = 50f;
 
     bool grounded;
 
@@ -26,18 +26,18 @@ public class Ball : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move2();
+        Move();
         Jump();
     }
 
-    private void Move2()
+    private void Move()
     {
-        Vector2 movement = new Vector2(0, 0);
+        Vector2 movement = new Vector2(0, rigid.velocity.y);
         if (Input.GetKey(KeyCode.A))
-            movement.x = -1;
+            movement.x = -1 * speed;
         if (Input.GetKey(KeyCode.D))
-            movement.x = 1;
-        rigid.velocity = movement * ballData.speed;
+            movement.x = 1 * speed;
+        rigid.velocity = movement;
     }
 
     private void Jump()
@@ -47,6 +47,7 @@ public class Ball : MonoBehaviour
             if (grounded)
             {
                 grounded = false;
+                Debug.Log("it's here!");
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             }
         }
