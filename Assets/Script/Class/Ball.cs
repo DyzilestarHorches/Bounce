@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour
     float speed = 30f;
     [SerializeField] private float jumpHeight = 50f;
 
+
+
     bool grounded;
 
 
@@ -21,6 +23,7 @@ public class Ball : MonoBehaviour
         rigid = this.GetComponent<Rigidbody2D>();
 
         Time.timeScale = 2;
+
     }
 
     // Update is called once per frame
@@ -60,4 +63,8 @@ public class Ball : MonoBehaviour
             grounded = true;
         }
     }
+
+
 }
+
+
