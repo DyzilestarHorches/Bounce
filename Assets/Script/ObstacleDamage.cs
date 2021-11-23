@@ -28,7 +28,7 @@ public class Ob : MonoBehaviour
             theBallHealth.addDamge(damage);
             nextDamage = damegeRate + Time.time;
 
-            pushBackForce(other.transform);
+            //pushBackForce(other.transform);
         }
     }
 
