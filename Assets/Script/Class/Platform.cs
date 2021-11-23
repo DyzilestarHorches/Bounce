@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
-    public SO_PlatformData size;
-
-    [SerializeField]
-    private float moveSpeed = 10f;
-
-    [SerializeField]
-    private float despawn = -50f;
-
-    [SerializeField]
-    private float spawn = 76f;
+    public SO_PlatformData platformData;
 
     public bool unpredictableExist = false;
 
@@ -33,16 +24,16 @@ public class Platform : MonoBehaviour
 
     void ChangePosition()
     {
-        if (transform.position.y < despawn)
+        if (transform.position.y < platformData.despawn)
         {
-            transform.position = new Vector3(Random.Range(-35f, 35f), spawn, 0f);
+            transform.position = new Vector3(Random.Range(platformData.leftLimit, platformData.rightLimit), platformData.spawn, 0f);
             UnpredictableExist();
         }
     }
 
     void MovePlatform()
     {
-            transform.position -= new Vector3(0f, moveSpeed, 0f) * Time.deltaTime;
+            transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;
     }    
     
     void UnpredictableMovement()
@@ -59,11 +50,11 @@ public class Platform : MonoBehaviour
         int delay = Random.Range(4, 7);
         yield return new WaitForSecondsRealtime(delay);
         
-        Vector3 direction = new Vector3(Random.Range(2f, 4f), 0f, 0f);
+        Vector3 direction = new Vector3(Random.Range(-16f, 16f), 0f, 0f);
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + direction;
         
-        float speed = Random.Range(0.5f, 1f);
+        float speed = Random.Range(0.1f, 0.2f);
         float time = 0f;
 
         while(transform.position != targetPosition)
@@ -90,7 +81,7 @@ public class Platform : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawLine(new Vector2(-100, despawn), new Vector2(100, despawn));
-        Gizmos.DrawLine(new Vector2(-100, spawn), new Vector2(100, spawn));
+        Gizmos.DrawLine(new Vector2(-100, platformData.despawn), new Vector2(100, platformData.despawn));
+        Gizmos.DrawLine(new Vector2(-100, platformData.spawn), new Vector2(100, platformData.spawn));
     }
 }
