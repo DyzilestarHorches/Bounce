@@ -134,10 +134,13 @@ GameObject:
   - component: {fileID: 12597535}
   - component: {fileID: 12597534}
   m_Layer: 0
+<<<<<<< Updated upstream
   m_Name: GameManager
   m_TagString: Untagged
+=======
   m_Name: platform_0_1
   m_TagString: ground
+>>>>>>> Stashed changes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -522,14 +525,17 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream
   - component: {fileID: 561723790}
   - component: {fileID: 561723791}
+=======
   - component: {fileID: 553330632}
   - component: {fileID: 553330631}
   - component: {fileID: 553330633}
   - component: {fileID: 553330635}
   - component: {fileID: 553330634}
   - component: {fileID: 553330636}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Light1
   m_TagString: Untagged
@@ -794,6 +800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c73338aca0a60fc4d8dd04f8aaa29392, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   size: {fileID: 0}
   moveSpeed: 10
   despawn: -60
@@ -801,9 +808,11 @@ MonoBehaviour:
   unpredictableExist: 0
 --- !u!61 &1281810219
 BoxCollider2D:
+=======
   jumpHeight: 250
 --- !u!58 &553330634
 CircleCollider2D:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -834,6 +843,7 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1281810217}
   m_Enabled: 1
   m_CastShadows: 1
@@ -843,6 +853,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+=======
   m_GameObject: {fileID: 553330630}
   m_BodyType: 0
   m_Simulated: 1
@@ -905,12 +916,16 @@ ParticleSystemRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
   m_RayTracingMode: 0
+>>>>>>> Stashed changes
   m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< Updated upstream
   - {fileID: 2100000, guid: 5fefdef58b244024b8c0f0b70912d102, type: 2}
+=======
   - {fileID: 10756, guid: 0000000000000000e000000000000000, type: 0}
+>>>>>>> Stashed changes
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -931,9 +946,11 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+<<<<<<< Updated upstream
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1281810221
 MeshFilter:
+=======
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -961,13 +978,16 @@ MeshFilter:
   m_MaskInteraction: 0
 --- !u!198 &883342780
 ParticleSystem:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1281810217}
   m_Mesh: {fileID: -5495902117074765545, guid: adc9252752d660c40b680797f12e1af0, type: 3}
 --- !u!4 &1281810222
+=======
   m_GameObject: {fileID: 883342778}
   serializedVersion: 7
   lengthInSec: 5
@@ -5727,11 +5747,13 @@ ParticleSystem:
         m_RotationOrder: 4
     vectorLabel1_3: W
 --- !u!4 &883342781
+>>>>>>> Stashed changes
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1281810217}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 25.300001, y: -28, z: 0}
@@ -5762,6 +5784,7 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 0
 --- !u!1 &1417802146
+=======
   m_GameObject: {fileID: 883342778}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 5}
@@ -5771,6 +5794,7 @@ Rigidbody2D:
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &1640001698
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5785,8 +5809,11 @@ GameObject:
   - component: {fileID: 1417802148}
   - component: {fileID: 1417802152}
   m_Layer: 0
+<<<<<<< Updated upstream
   m_Name: Platform (2)
+=======
   m_Name: platform_0_2
+>>>>>>> Stashed changes
   m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5983,8 +6010,10 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.9999998, y: 4}
   m_EdgeRadius: 0
+<<<<<<< Updated upstream
 --- !u!23 &1533662816
 MeshRenderer:
+=======
 --- !u!1 &1834941726
 GameObject:
   m_ObjectHideFlags: 0
@@ -6005,6 +6034,7 @@ GameObject:
   m_IsActive: 1
 --- !u!212 &1834941727
 SpriteRenderer:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
