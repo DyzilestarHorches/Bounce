@@ -9,13 +9,6 @@ public class GameManage : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ballData.jumpRange += 10;
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            ballData.jumpRange -= 10;
-        }
+      
     }
 }

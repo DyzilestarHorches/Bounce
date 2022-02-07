@@ -33,12 +33,12 @@ public class Platform : MonoBehaviour
 
     void MovePlatform()
     {
-            transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;
+            transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;     
     }    
     
     void UnpredictableMovement()
     {
-        if (transform.position.y < 25 && unpredictableExist)
+        if (transform.position.y < 25 && unpredictableExist)    //Should we randomize this number
         {
             StartCoroutine(UnpredictableMoving());
             unpredictableExist = false;
@@ -47,10 +47,10 @@ public class Platform : MonoBehaviour
 
     IEnumerator UnpredictableMoving()
     {
-        int delay = Random.Range(4, 7);
+        int delay = Random.Range(4, 7);     //or recalculate this number
         yield return new WaitForSecondsRealtime(delay);
         
-        Vector3 direction = new Vector3(Random.Range(-16f, 16f), 0f, 0f);
+        Vector3 direction = new Vector3(Random.Range(-16f, 16f), 0f, 0f);       //range -> no body wants it to move 1 unit -> different random range
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + direction;
         
@@ -85,3 +85,6 @@ public class Platform : MonoBehaviour
         Gizmos.DrawLine(new Vector2(-100, platformData.spawn), new Vector2(100, platformData.spawn));
     }
 }
+
+//Change platformData from 1 universal one to seperate unique SO for each platform -> good for proccess relative task between platforms 
+//and other objects from a controlling class. For ex: scoring system

@@ -8,21 +8,19 @@ public class Ball : MonoBehaviour
 
     Rigidbody2D rigid;
 
-
-    float speed = 30f;
-    [SerializeField] private float jumpHeight = 50f;
-
+    float speed = 30f;  //in ballData
+    [SerializeField] private float jumpHeight = 50f; //in ballData
 
 
     bool grounded;
 
 
     // Start is called before the first frame update
-    void Start()
+    void Start() 
     {
         rigid = this.GetComponent<Rigidbody2D>();
 
-        Time.timeScale = 2;
+        Time.timeScale = 2; //try to get rid of it
 
     }
 
@@ -50,7 +48,7 @@ public class Ball : MonoBehaviour
             if (grounded)
             {
                 grounded = false;
-                Debug.Log("it's here!");
+                //Debug.Log("it's here!");
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
             }
         }
