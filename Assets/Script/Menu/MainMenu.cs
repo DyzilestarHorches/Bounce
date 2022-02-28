@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject OptionPanel;
-    public GameObject LeaderBoardPanel;
-    public GameObject StorePanel;
+    public CanvasGroup Main;// fmainmenu alpha
+    public List<Transform> subMenus = new List<Transform>();//mainly used for motion in each submenu
+
     // Click play the MainScene
     public void PlayGame()
     {
@@ -23,26 +23,40 @@ public class MainMenu : MonoBehaviour
     public void OpenOptionPanel()
     {
         this.gameObject.SetActive(false);
-        OptionPanel.gameObject.SetActive(true);
+        subMenus[0].gameObject.SetActive(true);
+        //motion 
+        subMenus[0].localPosition = new Vector2(0, -20);
+        subMenus[0].LeanMoveLocalY(0, 1).setEaseOutQuart();
+        
     }
     // click on LeaderBoardButton from mainMenu
     public void OpenLeaderBoardPanel()
     {
         this.gameObject.SetActive(false);
-        LeaderBoardPanel.gameObject.SetActive(true);
+        subMenus[1].gameObject.SetActive(true);
+        //motion
+        subMenus[1].localPosition = new Vector2(0, -20);
+        subMenus[1].LeanMoveLocalY(0, 1).setEaseOutQuart();
     }
     // click on StoreButton from MainMenu
     public void OpenStorePanel()
     {
         this.gameObject.SetActive(false);
-        StorePanel.gameObject.SetActive(true);
+        subMenus[2].gameObject.SetActive(true);
+        //motion
+        subMenus[2].localPosition = new Vector2(0, -20);
+        subMenus[2].LeanMoveLocalY(0, 1).setEaseOutQuart();
     }
     // Back to MainMenu
     public void BackButton()
-    {
+    {   
+        foreach( Transform subMenu in subMenus)
+        {
+            subMenu.LeanMoveLocalY(-20, 0.1f).setEaseInExpo();
+            subMenu.gameObject.SetActive(false);
+        }
+        Main.alpha = 0;
         this.gameObject.SetActive(true);
-        OptionPanel.gameObject.SetActive(false);
-        LeaderBoardPanel.gameObject.SetActive(false);
-        StorePanel.gameObject.SetActive(false);
+        Main.LeanAlpha(1,0.5f); 
     }
 }

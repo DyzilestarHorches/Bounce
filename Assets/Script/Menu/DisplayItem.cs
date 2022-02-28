@@ -6,7 +6,6 @@ using TMPro;
 public class DisplayItem : MonoBehaviour
 {
     public StoreItem Item;
-
     public Image ArtWork;
     public TextMeshProUGUI nameText;
     // Start is called before the first frame update

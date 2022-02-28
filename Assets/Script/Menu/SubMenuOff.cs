@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SubMenuOff : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
         this.gameObject.SetActive(false);
     }
- 
+
 }

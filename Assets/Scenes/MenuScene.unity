@@ -5286,6 +5286,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227933257}
   - component: {fileID: 1227933258}
+  - component: {fileID: 1227933259}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -5330,9 +5331,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dd580a03335ce949bc0be021542698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Main: {fileID: 1227933259}
+  subMenus:
+  - {fileID: 1477082911}
+  - {fileID: 1190972249}
+  - {fileID: 2084983254}
   OptionPanel: {fileID: 1477082910}
   LeaderBoardPanel: {fileID: 1190972248}
   StorePanel: {fileID: 2084983253}
+--- !u!225 &1227933259
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227933256}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1229865487
 GameObject:
   m_ObjectHideFlags: 0
@@ -7670,7 +7688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.4, y: -6.9}
+  m_AnchoredPosition: {x: -6.399994, y: -6.9}
   m_SizeDelta: {x: 137.9485, y: 137.9533}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1690658669
