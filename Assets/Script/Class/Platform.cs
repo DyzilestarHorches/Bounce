@@ -5,13 +5,12 @@ using UnityEngine;
 public class Platform : MonoBehaviour
 {
     public SO_PlatformData platformData;
-
     public bool unpredictableExist = false;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        InitRec();
     }
 
     // Update is called once per frame
@@ -22,6 +21,19 @@ public class Platform : MonoBehaviour
         UnpredictableMovement();
     }
 
+    void InitRec()
+    {
+        Vector2 _midpoint, _size;
+        _midpoint = new Vector2(transform.position.x, transform.position.y + 6);
+        _size = new Vector2(14, 6);
+        platformData.pointZone = new Rectangle(_midpoint, _size);
+    }
+    void UpdateData()
+    {
+        platformData.pointZone.midPoint.y = transform.position.y + 6;    platformData.pointZone.midPoint.x = transform.position.x;
+        platformData.position = transform.position;
+    }
+
     void ChangePosition()
     {
         if (transform.position.y < platformData.despawn)
@@ -29,11 +41,12 @@ public class Platform : MonoBehaviour
             transform.position = new Vector3(Random.Range(platformData.leftLimit, platformData.rightLimit), platformData.spawn, 0f);
             UnpredictableExist();
         }
+        UpdateData();
     }
 
     void MovePlatform()
     {
-            transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;     
+        transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;     
     }    
     
     void UnpredictableMovement()
@@ -83,6 +96,7 @@ public class Platform : MonoBehaviour
     {
         Gizmos.DrawLine(new Vector2(-100, platformData.despawn), new Vector2(100, platformData.despawn));
         Gizmos.DrawLine(new Vector2(-100, platformData.spawn), new Vector2(100, platformData.spawn));
+        Gizmos.DrawLine(new Vector2(transform.position.x - 14, transform.position.y + 12), new Vector2(transform.position.x + 14, transform.position.y + 12));
     }
 }
 

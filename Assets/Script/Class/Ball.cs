@@ -39,6 +39,8 @@ public class Ball : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
             movement.x = 1 * speed;
         rigid.velocity = movement;
+
+        ballData.position = transform.position;
     }
 
     private void Jump()
