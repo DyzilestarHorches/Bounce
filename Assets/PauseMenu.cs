@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -8,10 +10,30 @@ public class PauseMenu : MonoBehaviour
     public Transform OptionMenu;
     public CanvasGroup BlurBlank;
     public CanvasGroup Button;
+
+    //scoring illustation
+    public SO_GameManagerData gameData;
+    public TMP_Text scoreIllu;
+
     public void Start()
     {
         this.gameObject.SetActive(false);
         OptionMenu.gameObject.SetActive(false);
+    }
+
+    public void OpenSubMenuEndGame()
+    {
+        BlurBlank.alpha = 0;
+        BlurBlank.LeanAlpha(1, 1f);
+        this.gameObject.SetActive(true);
+        //hide pause button
+        Button.LeanAlpha(0, 1f);
+        //motion
+        subMenu.localPosition = new Vector2(0, -Screen.height);
+        subMenu.LeanMoveLocalY(-80, 0.8f).setEaseOutQuart();
+
+        //scoring illustarion
+        scoreIllu.text = gameData.lastScore.ToString();
     }
     public void OpenSubMenu()
     {
@@ -23,6 +45,12 @@ public class PauseMenu : MonoBehaviour
         //motion
         subMenu.localPosition = new Vector2(0, -Screen.height);
         subMenu.LeanMoveLocalY(-80, 0.8f).setEaseOutQuart();
+
+        //scoring illustarion
+        scoreIllu.text = gameData.score.ToString();
+
+        //pause State trigger
+        gameData.gameState = gameData.gameState.ChangeState("pause");
     }
     public void OpenOptionMenu()
     {
@@ -46,10 +74,21 @@ public class PauseMenu : MonoBehaviour
         //reveal button
         Button.LeanAlpha(1, 1f);
         subMenu.LeanMoveLocalY(-Screen.height, 0.8f).setEaseInQuart().setOnComplete(OnComplete);
+
+        //restart game if over
+        if (gameData.gameState.stateName == "over")
+        {
+            SceneManager.LoadScene("GameScene");
+        } else
+        //change game state
+        gameData.gameState = gameData.gameState.ChangeState("active");
+
     }
     void OnComplete()
     {
+        Debug.Log("?");
         this.gameObject.SetActive(false);
+        
     }
    
 }

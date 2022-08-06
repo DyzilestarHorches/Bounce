@@ -8,19 +8,21 @@ public class Ball : MonoBehaviour
 
     Rigidbody2D rigid;
 
-    float speed = 30f;  //in ballData
-    [SerializeField] private float jumpHeight = 50f; //in ballData
-
-
     bool grounded;
 
 
     // Start is called before the first frame update
-    void Start() 
+    private void Awake()
+    {
+        ballData.position = transform.position;
+    }
+    void Start()
     {
         rigid = this.GetComponent<Rigidbody2D>();
-
-        Time.timeScale = 2; //try to get rid of it
+        ballData.isPause = false;
+        ballData.speed = 30f;
+        ballData.jumpRange = 90f;
+        rigid.gravityScale = 12;
 
     }
 
@@ -29,15 +31,33 @@ public class Ball : MonoBehaviour
     {
         Move();
         Jump();
+        controlBallActive();
+    }
+
+    void controlBallActive()
+    {
+        if (ballData.isPause)
+        {
+            ballData.jumpRange = 0;
+            ballData.speed = 0;
+            rigid.velocity = new Vector2(0, 0);
+            rigid.gravityScale = 0;
+        }
+        else
+        {
+            ballData.speed = 30f;
+            ballData.jumpRange = 90f;
+            rigid.gravityScale = 12;
+        }
     }
 
     private void Move()
     {
         Vector2 movement = new Vector2(0, rigid.velocity.y);
         if (Input.GetKey(KeyCode.A))
-            movement.x = -1 * speed;
+            movement.x = -1 * ballData.speed;
         if (Input.GetKey(KeyCode.D))
-            movement.x = 1 * speed;
+            movement.x = 1 * ballData.speed;
         rigid.velocity = movement;
 
         ballData.position = transform.position;
@@ -51,7 +71,7 @@ public class Ball : MonoBehaviour
             {
                 grounded = false;
                 //Debug.Log("it's here!");
-                rigid.velocity = new Vector2(rigid.velocity.x, jumpHeight);
+                rigid.velocity = new Vector2(rigid.velocity.x, ballData.jumpRange);
             }
         }
     }

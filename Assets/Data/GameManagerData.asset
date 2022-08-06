@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e0e0e2eaa4ea74b95e283a176a25c8, type: 3}
   m_Name: GameManagerData
   m_EditorClassIdentifier: 
-  gameState: {fileID: 0}
+  gameState: {fileID: 11400000, guid: c1b594b6ff54a614793d183a854f24b0, type: 2}
   gameMove: {x: 0, y: 0}
-  gameSpeed: 0
-  score: 0
+  gameSpeed: 2
+  score: 3
+  lastScore: 8

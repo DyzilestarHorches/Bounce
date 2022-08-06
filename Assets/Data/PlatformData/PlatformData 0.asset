@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlatformData 0
   m_EditorClassIdentifier: 
   size: {x: 0, y: 0}
-  position: {x: 25.299997, y: -65.250046}
+  position: {x: -23.533287, y: 46.202244}
   image: {fileID: 0}
   spawn: 85
   despawn: -85

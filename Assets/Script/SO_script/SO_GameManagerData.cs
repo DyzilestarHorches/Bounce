@@ -11,4 +11,5 @@ public class SO_GameManagerData : ScriptableObject
     public float gameSpeed;
 
     public int score;
+    public int lastScore;
 }

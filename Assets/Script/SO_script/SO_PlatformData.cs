@@ -9,10 +9,10 @@ public class SO_PlatformData : ScriptableObject
     public Rectangle pointZone;
     public Vector2 size, position;
     public Sprite image;
-    public float spawn = 80;
-    public float despawn = -60;
-    public float leftLimit = -50;
-    public float rightLimit = 50;
+    public float spawn = 85;
+    public float despawn = -85;
+    public float leftLimit = -40;
+    public float rightLimit = 40;
     public float moveSpeed = 5;
 }
 

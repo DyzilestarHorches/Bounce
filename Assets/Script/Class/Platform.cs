@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Platform : MonoBehaviour
 {
+    public SO_GameManagerData gameData;
     public SO_PlatformData platformData;
     public bool unpredictableExist = false;
 
@@ -46,7 +47,7 @@ public class Platform : MonoBehaviour
 
     void MovePlatform()
     {
-        transform.position -= new Vector3(0f, platformData.moveSpeed, 0f) * Time.deltaTime;     
+        transform.position -= new Vector3(0f, platformData.moveSpeed * gameData.gameSpeed, 0f) * Time.deltaTime;     
     }    
     
     void UnpredictableMovement()
